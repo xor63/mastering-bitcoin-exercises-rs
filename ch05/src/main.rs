@@ -95,8 +95,7 @@ fn main() {
     let wordlist = load_wordlist(wordlist_file);
     let wordlist = wordlist.lines().collect();
 
-    let mut os_rng = OsRng::new().unwrap();
-    let sequence = get_sequence(MnemonicLength::L15, &mut os_rng);
+    let sequence = get_sequence(MnemonicLength::L15, &mut OsRng);
 
     let mnemonic_words = generate_mnemonic_words(&sequence, &wordlist);
 
